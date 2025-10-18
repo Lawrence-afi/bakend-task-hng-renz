@@ -14,6 +14,11 @@ const limiter = rateLimit({
 server.use(cors());
 server.use(limiter);
 
+server.get("/", (req, res) => {
+  res.send("Welcome to the API. Use the /me endpoint to get user info and a cat fact.");
+}
+);
+
 server.get("/me", async (req, res) => {
   try {
     console.log("Hello World");
