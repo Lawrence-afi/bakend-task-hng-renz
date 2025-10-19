@@ -3,7 +3,10 @@ import axios from "axios";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
 const server = express();
+import dotenv from "dotenv";
+dotenv.config();
 
+let port = process.env.PORT || 3000;
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
@@ -44,6 +47,6 @@ server.get("/me", async (req, res) => {
   }
 });
 
-server.listen(3000, () => {
+server.listen(port, () => {
   console.log("Server is running on port 3000");
 });
