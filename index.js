@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 const server = express();
 dotenv.config();
 
-let port = process.env.PORT || 3000;
+let port = process.env.SITE_PORT || 3000;
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
