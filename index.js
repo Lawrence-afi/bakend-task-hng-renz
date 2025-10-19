@@ -2,8 +2,8 @@ import express from "express";
 import axios from "axios";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
-const server = express();
 import dotenv from "dotenv";
+const server = express();
 dotenv.config();
 
 let port = process.env.PORT || 3000;
